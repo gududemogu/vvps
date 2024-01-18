@@ -5,15 +5,15 @@ RUN DEBIAN_FRONTEND=noninteractive apt install wine qemu-kvm *zenhei* xz-utils d
 RUN wget https://github.com/novnc/noVNC/archive/refs/tags/v1.2.0.tar.gz
 RUN tar -xvf v1.2.0.tar.gz
 RUN mkdir  $HOME/.vnc
-RUN echo 'a499070979126' | vncpasswd -f > $HOME/.vnc/passwd
+RUN echo 'Aa499070979126' | vncpasswd -f > $HOME/.vnc/passwd
 RUN echo '/bin/env  MOZ_FAKE_NO_SANDBOX=1  dbus-launch xfce4-session'  > $HOME/.vnc/xstartup
 RUN chmod 600 $HOME/.vnc/passwd
 RUN chmod 755 $HOME/.vnc/xstartup
-RUN echo 'whoami ' >>/a499070979126.sh
-RUN echo 'cd ' >>/a499070979126.sh
-RUN echo "su -l -c 'vncserver :2000 -geometry 1360x768' "  >>/a499070979126.sh
-RUN echo 'cd /noVNC-1.2.0' >>/a499070979126.sh
-RUN echo './utils/launch.sh  --vnc localhost:7900 --listen 8900 ' >>/a499070979126.sh
-RUN chmod 755 /a499070979126.sh
+RUN echo 'whoami ' >>/Aa499070979126.sh
+RUN echo 'cd ' >>/Aa499070979126.sh
+RUN echo "su -l -c 'vncserver :2000 -geometry 1360x768' "  >>/Aa499070979126.sh
+RUN echo 'cd /noVNC-1.2.0' >>/Aa499070979126.sh
+RUN echo './utils/launch.sh  --vnc localhost:7900 --listen 8900 ' >>/Aa499070979126.sh
+RUN chmod 755 /Aa499070979126.sh
 EXPOSE 8900
-CMD  /a499070979126.sh
+CMD  /Aa499070979126.sh
